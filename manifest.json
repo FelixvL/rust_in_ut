@@ -1,0 +1,15 @@
+{
+    "name": "rusttrial.all",
+    "description": "rusttrial",
+    "architecture": "@CLICK_ARCH@",
+    "title": "RustTrial",
+    "hooks": {
+        "rusttrial": {
+            "apparmor": "rusttrial.apparmor",
+            "desktop":  "rusttrial.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "all <all@rust.nl>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
