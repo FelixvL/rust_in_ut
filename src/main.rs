@@ -34,12 +34,15 @@ struct Greeter {
     name: qt_property!(QString; NOTIFY name_changed),
     tweede: qt_property!(QString; NOTIFY name_changed),
     teller: qt_property!(String; NOTIFY name_changed),
+    getal: i32,
+    
     name_changed: qt_signal!(),
     compute_greetings: qt_method!(
-        fn compute_greetings(&self, verb: String) -> QString {
+        fn compute_greetings(&mut self, verb: String) -> QString {
             println!("hoi");
-            &mut self.teller = String::from("Trial").into();
-            format!("{verb} {} -", self.name).into()
+            self.teller = String::from("Trial").into();
+            self.getal = self.getal + 1;
+            format!("{verb} {} - {} - {}", self.name, self.teller, self.getal).into()
         }
     ),
 }
